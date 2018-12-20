@@ -1,0 +1,76 @@
+namespace measureTheShapes
+{
+    class Program
+    {
+        class measure
+            {
+            
+            public double length;
+            public double width;
+           // public double height;
+            public double radius;
+            //public double diameter;
+            public static double pi = 3.14159;
+            public void displayTheMeasure()
+            {
+                Console.WriteLine($"\n\nLength is: {length} \nWidth is:  {width} \nRaduis is: {radius}");
+            }
+        } //End class "measure"
+     
+       //  CLASS Child 1
+        class rectangle :measure // Inheritance from measure class
+        {
+
+            public double getArea()
+            {
+                return length * width;
+            }
+        }
+        // CLASS Child 2
+        class circle : measure // Inheritance from measure class
+        {
+            public double getArea()
+            {
+                return  (Math.Pow(radius, 2)) * pi;
+            }
+        }
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Select the type of Measurement: \n 1 - Rectangle \n 2 - Circle ");
+            int caseSwitch = Convert.ToInt32(Console.ReadLine());
+
+            if (caseSwitch == 1)
+            {
+              
+                    rectangle r = new rectangle();
+                    Console.WriteLine("Type the length: ");
+                    int lengthSize = Convert.ToInt32(Console.ReadLine());
+                    r.length = lengthSize;
+
+                    Console.WriteLine("Type the width: ");
+                    int widthSize = Convert.ToInt32(Console.ReadLine());
+                    r.width = widthSize;
+                    r.displayTheMeasure();
+               
+                    Console.WriteLine("The area is: {0}", r.getArea());
+                    Console.ReadKey();
+
+            }
+
+            else if(caseSwitch ==2 )
+            {
+                circle c = new circle();
+                Console.WriteLine("Type the Radius: ");
+                int radiusSize = Convert.ToInt32(Console.ReadLine());
+                c.radius = radiusSize;
+                c.displayTheMeasure();
+                Console.WriteLine("The area is: {0}", c.getArea());
+                Console.ReadKey();
+
+            }
+
+
+
+        }
+    }
+}
