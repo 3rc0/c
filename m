@@ -1,3 +1,8 @@
+// Programming for C Sharp Examine
+// Four Pillars of Object-Oriented Programming
+// 1. Encapsulation 2. Abstraction 3. Inheritance 4. Polymorphism
+// Additional Text File and Binary File classes of System IO
+
 namespace cSharp
 {
     // Parent Class
